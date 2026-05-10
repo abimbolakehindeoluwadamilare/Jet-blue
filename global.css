@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── Fonts ── */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+
+  /* ── Brand Palette ── */
+  --clr-navy:       #040e20;
+  --clr-navy-mid:   #071f50;
+  --clr-navy-light: #0b2d6e;
+  --clr-electric:   #2563eb;
+  --clr-electric-bright: #3b82f6;
+  --clr-electric-glow:   rgba(37, 99, 235, 0.35);
+  --clr-accent:     #00d4ff;
+  --clr-accent-dim: rgba(0, 212, 255, 0.15);
+  --clr-white:      #ffffff;
+  --clr-off-white:  #f0f4ff;
+  --clr-gray-100:   #e8edf5;
+  --clr-gray-300:   #94a3b8;
+  --clr-gray-500:   #64748b;
+  --clr-gray-700:   #334155;
+  --clr-dark:       #010d1a;
+
+  /* ── Legacy compatibility ── */
+  --Color-Downriver: #062147;
+  --Color-Neutral-Darker: #1a2125;
+  --Color-Neutral-Darkest: #01090d;
+  --Color-Neutral-Darkest1: #000;
+  --Color-White: #fff;
+  --Opacity-Neutral-Darkest-5: rgba(1, 9, 13, 0.05);
+  --Opacity-Neutral-Darkest-15: rgba(1, 9, 13, 0.15);
+  --Opacity-Neutral-Darkest-60: rgba(1, 9, 13, 0.6);
+
+  /* ── Spacing ── */
+  --Container-container-large: 1280px;
+  --Max-Width-max-width-large: 768px;
+  --Max-Width-max-width-medium: 560px;
+  --Page-Padding-padding-global: 80px;
+  --Section-Padding-padding-section-large: 120px;
+  --Section-Padding-padding-section-medium: 80px;
+
+  /* ── Radii ── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --Radius-Large: 0px;
+  --Radius-Medium: 0px;
+  --Radius-Small: 0px;
+
+  /* ── Borders ── */
+  --Stroke-Border-Width: 1px;
+  --border-subtle: 1px solid rgba(255,255,255,0.08);
+  --border-glow:   1px solid rgba(37,99,235,0.4);
+
+  /* ── Shadows ── */
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2);
+  --shadow-glow:  0 0 40px rgba(37,99,235,0.25);
+  --shadow-hover: 0 16px 48px rgba(0,0,0,0.4), 0 0 20px rgba(37,99,235,0.2);
+
+  /* ── Type Scale ── */
+  --Text-Sizes-Heading-1: clamp(2.5rem, 5vw, 3.75rem);
+  --Text-Sizes-Heading-2: clamp(2rem, 4vw, 3rem);
+  --Text-Sizes-Heading-3: clamp(1.75rem, 3vw, 2.5rem);
+  --Text-Sizes-Heading-4: clamp(1.375rem, 2.5vw, 2rem);
+  --Text-Sizes-Heading-5: clamp(1.125rem, 2vw, 1.5rem);
+  --Text-Sizes-Text-Large: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --Text-Sizes-Text-Medium: clamp(1rem, 1.25vw, 1.125rem);
+  --Text-Sizes-Text-Regular: 1rem;
+  --Text-Sizes-Text-Small: 0.875rem;
+  --Text-Sizes-Text-Tiny: 0.75rem;
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base:   250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--clr-navy);
+  color: var(--clr-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scroll Reveal ── */
+/* js-ready class added by JS — only animate when JS has loaded */
+body.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1);
+  will-change: opacity, transform;
+}
+body.js-ready .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+body.js-ready .reveal-delay-1 { transition-delay: 0.12s; }
+body.js-ready .reveal-delay-2 { transition-delay: 0.24s; }
+body.js-ready .reveal-delay-3 { transition-delay: 0.36s; }
+body.js-ready .reveal-delay-4 { transition-delay: 0.48s; }
+
+@media (prefers-reduced-motion: reduce) {
+  body.js-ready .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+
+
